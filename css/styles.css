@@ -1,3 +1,26 @@
+.Alinear_Felx{
+  display: flex;
+  justify-content: center;
+
+}
+
+.iniciosesion{
+  text-align: center;
+}
+
+.CuadroLogin{
+  text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
 .jumbotron,
 .card-body,
 .container,
