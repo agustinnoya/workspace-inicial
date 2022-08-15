@@ -18,12 +18,6 @@
 
 
     let htmlContentToAppend = "";
-    // for(let i = 0; i < currentCategoriesArray.length; i++){
-    //     let category = currentCategoriesArray[i];
-
-    // if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-    //     ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
-
 
     const url = "https://japceibal.github.io/emercado-api/cats_products/101.json"
     console.log("holaaa") 
