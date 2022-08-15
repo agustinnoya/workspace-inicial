@@ -42,12 +42,12 @@
             <div onclick="setCatID(${data.products[i].id})" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
-                        <img src="${data.products[i].image}" alt="${data.products[i].description}" class="img-thumbnail">
+                        <img src="${data.products[i].image}" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${data.products[i].name}</h4>
-                            <small class="text-muted">${data.products[i].soldCountt} artículos</small>
+                            <h4 class="mb-1">${data.products[i].name} - ${data.products[i].currency} ${data.products[i].cost} </h4>
+                            <small class="text-muted">${data.products[i].soldCount} artículos</small> 
                         </div>
                         <p class="mb-1">${data.products[i].description}</p>
                     </div>
@@ -57,7 +57,10 @@
             
         }
         document.getElementById("data").innerHTML = htmlContentToAppend; 
-        
+
+        titulo2 = `<h2 class="centrartexto">Productos</h2>
+        <p class="centrartexto">Verás aqui todos los productos de la categoria<strong> Autos</strong></p>`
+        document.getElementById("titulo").innerHTML = titulo2
        // document.getElementById("data").innerHTML = body
     }
     
