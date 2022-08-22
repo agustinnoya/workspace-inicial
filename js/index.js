@@ -10,18 +10,44 @@
 //
 //}
 
+//localStorage.setItem(`log`, false);
+//let roge = localStorage.getItem(`log`);
+//console.log(roge)
+
+//pregunta mediante el if si existe la calve para log que se crea en login, si no se pasa por login no esta creada, por ende te envia a login 
+    function logeado() {
+        if (localStorage.getItem(`log`) == null ) {
+            window.location.href = "login.html"
+        }
+    };
+    logeado();
+    
 
 
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("autos").addEventListener("click", function() {
+
+
+
+//document.addEventListener("DOMContentLoaded", function () {
+//    const a = JSON.parse(localStorage.getItem(`datosusuario`))
+//    console.log(a)
+//    if (!a) {
+//        window.location.href = "login.html"
+//    }
+//});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("autos").addEventListener("click", function () {
         localStorage.setItem("catID", 101);
         window.location = "products.html"
     });
-    document.getElementById("juguetes").addEventListener("click", function() {
+    document.getElementById("juguetes").addEventListener("click", function () {
         localStorage.setItem("catID", 102);
         window.location = "products.html"
     });
-    document.getElementById("muebles").addEventListener("click", function() {
+    document.getElementById("muebles").addEventListener("click", function () {
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });

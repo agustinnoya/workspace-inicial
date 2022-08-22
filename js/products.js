@@ -16,21 +16,22 @@
 // }
 
 
-
+//crea una variable vacia para poder incertar cosas en ella 
     let htmlContentToAppend = "";
 
     const url = "https://japceibal.github.io/emercado-api/cats_products/101.json"
     console.log("holaaa") 
+    
     fetch(url)
-        .then((response) => response.json())
+        .then((response) => response.json())   //
         //.then((data) => console.log(data))
-        .then((data) => mostrarData(data))
-        .catch(error => console.log(error))
+        .then((data) => mostrarData(data))   //
+        .catch(error => console.log(error)) //si existe algun error lo imprime en la consola
 
     const mostrarData = (data) => {
         console.log(data)
         console.log(data.products)
-        //let body = ""
+        //mediante el for se extraen los valores de cada campo y se coloca en el codigo con el respectivo estilo, con el += se agrega al contenido 
         for (let i = 0; i < data.products.length; i++) {
             htmlContentToAppend += `
             <div onclick="setCatID(${data.products[i].id})" class="list-group-item list-group-item-action cursor-active">
@@ -50,6 +51,7 @@
             `
             
         }
+        //inserta en products id data el contenido de arriba que se guardo en htmlconttoappend
         document.getElementById("data").innerHTML = htmlContentToAppend; 
 
         titulo2 = `<h2 class="centrartexto">Productos</h2>
