@@ -10,19 +10,24 @@
 //
 //}
 
-//localStorage.setItem(`log`, false);
-//let roge = localStorage.getItem(`log`);
-//console.log(roge)
+
 
 //pregunta mediante el if si existe la calve para log que se crea en login, si no se pasa por login no esta creada, por ende te envia a login 
+//si estas logeado imprime el usuario en un boton en la barra superior 
     function logeado() {
         if (localStorage.getItem(`log`) == null ) {
             window.location.href = "login.html"
+        }else{
+            document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
         }
     };
-    logeado();
-    
+    logeado();4
 
+
+
+
+  
+   
 
 
 
