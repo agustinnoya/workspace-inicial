@@ -21,7 +21,7 @@
             document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
         }
     };
-    logeado();4
+    logeado();
 
 
 

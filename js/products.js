@@ -23,13 +23,17 @@ let preciomaximo = undefined;
 const url = "https://japceibal.github.io/emercado-api/cats_products/" + localStorage.getItem(`catID`) + ".json"
 console.log(url)
 
+function setCatID(id) {
+    localStorage.setItem("catIDobj", id);
+    window.location = "product-info.html"
+}
 
 //cambio en entrega 2 de mi fetch(agrege let = contenido para poder filtrar el resultado)
 function traer() {
     fetch(url)
         .then(response => response.json())
         .then(data => { contenido = data; return data })
-        .then(data => mostrarcontenido(contenido))
+        .then(contenido => mostrarcontenido(contenido))
         .catch(error => console.log(error))
 }
 traer();
@@ -96,7 +100,7 @@ document.getElementById("aplicarfiltro").addEventListener("click", () => {
 function mostrarcontenido(contenido) {
 
     let htmlContentToAppend = ""
-5
+
     for (let i = 0; i < contenido.products.length; i++) {
 
         if (((preciominimo == undefined) || (preciominimo != undefined && contenido.products[i].cost >= preciominimo)) &&
@@ -126,7 +130,7 @@ function mostrarcontenido(contenido) {
     document.getElementById("titulo").innerHTML = titulo2
 
 }
-
+document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
 
 
 
