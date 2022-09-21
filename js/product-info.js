@@ -136,11 +136,11 @@ function print_comentarios() {
 }
 
 
-
 /*
+//desafiate 
 document.getElementById("enviarcomentario").addEventListener("click", () => {
   calificacion = document.getElementById("estrellitasnuevo")
-  calificacion = document.getElementById("tuopinionid")
-  
+  opinion = document.getElementById("tuopinionid")
+  console.log(opinion)
  });
 */
