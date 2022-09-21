@@ -6,6 +6,10 @@ document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuari
 let producto;
 let comentarios;
 
+function setCatID(id) {
+  localStorage.setItem("catIDobj", id);
+  window.location = "product-info.html"
+}
 
 
 function traer_productor() {
@@ -15,6 +19,7 @@ function traer_productor() {
     .then(data => { producto = data; return data })
     .then(producto => { console.log("producto dentro del fetch", producto); return producto })
     .then(producto => informacion_del_producto(producto))
+    .then(producto => productos_relacionados(producto))
     .catch(error => console.log(error))
 }
 traer_productor();
@@ -47,7 +52,10 @@ function informacion_del_producto(producto) {
           <p> <img src="${producto.images[0]}" height = "196"> <img src="${producto.images[1]}" height = "196"> <img src="${producto.images[2]}" height = "196"> <img src="${producto.images[3]}" height = "196"></p>
         </div>
           `
+
+
   document.getElementById("info_producto").innerHTML = data_productos;
+  return producto;
 }
 
 function print_comentarios() {
@@ -135,12 +143,39 @@ function print_comentarios() {
   document.getElementById("comentarios").innerHTML = data_comentarios;
 }
 
+function productos_relacionados() {
 
-/*
-//desafiate 
-document.getElementById("enviarcomentario").addEventListener("click", () => {
-  calificacion = document.getElementById("estrellitasnuevo")
-  opinion = document.getElementById("tuopinionid")
-  console.log(opinion)
- });
-*/
+  let productosrelacionados = ""
+
+  productosrelacionados += `PATO PATO PATO PATO 
+    `
+
+
+  document.getElementById("relacionadosproductos").innerHTML = productosrelacionados;
+
+}
+
+
+function productos_relacionados(producto) {
+  console.log("dentro2", producto)
+  let productosrelacionados = ""
+  for (let i = 0; i < producto.relatedProducts.length; i++) {
+    productosrelacionados += `
+    <div onclick="setCatID(${producto.relatedProducts[i].id})" class="cursor-active">
+        <div>
+            <div align="center">
+                <img src="${producto.relatedProducts[i].image}"class="img-thumbnail" style= width:300px height:300 px>
+            </div>
+            <div>
+                <p class="mb-1, Alinear_Felx">${producto.relatedProducts[i].name}</p>
+            </div>
+        </div>
+    </div>
+    `
+
+  }
+  document.getElementById("relacionadosproductos").innerHTML = productosrelacionados;
+
+}
+
+
