@@ -2,6 +2,13 @@ const email = document.getElementById("email")
 const contraseña = document.getElementById("contraseña")
 const button = document.getElementById("button")
 //recopila la informacion del usuario y la guarda para luego poderla usar en index.js
+
+function cerrarseion(){
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('contraseña');
+}
+cerrarseion()
+
 button.addEventListener("click", (e) => { 
     localStorage.setItem(`usuario`, email.value);
     localStorage.setItem(`contraseña`, contraseña.value);

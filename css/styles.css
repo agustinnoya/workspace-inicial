@@ -1,23 +1,40 @@
-.Alinear_Felx{
+.Alinear_Felx {
   display: flex;
   justify-content: center;
 
 }
-.centrartexto{
+
+.centrartexto {
   text-align: center;
 }
 
-.iniciosesion{
+.iniciosesion {
   text-align: center;
 }
 
-.CuadroLogin{
+.CuadroLogin {
   text-align: center;
-  }
+}
 
 
+.desplegable{
+  position: absolute;
+  background: rgba(255, 255, 255);
+  display: none;
+  width: 120%;
+}
 
+.desplegable li a{
+  display: block;
+  padding: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
 
+.navbar-nav li:hover .desplegable{
+ display: block;
+}
 
 
 

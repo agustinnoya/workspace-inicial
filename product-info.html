@@ -22,17 +22,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-            <a id="Usuarioindex" class="nav-link" href="my-profile.html"></a>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="sell.html">Vender</a></li>
+          <li class="nav-item"><a id="Usuarioindex" class="nav-link" href="my-profile.html"></a>
+            <ul class="desplegable">
+              <li><a href="cart.html">Mi carrito</a></li>
+              <li><a href="my-profile.html">Mi perfil</a></li>
+              <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -44,7 +42,7 @@
 
       </div>
       <div>
-<h3>Comentarios</h3>
+        <h3>Comentarios</h3>
       </div>
       <div id="comentarios">
       </div>
@@ -54,14 +52,14 @@
         <textarea name="tuopinion" class="form-control" id="tuopinionid"></textarea>
         <label>Categoría</label>
         <select name="productCategory" class="custom-select form-select d-block w-100" id="estrellitasnuevo">
-          <option value="" >Tu puntuación</option>
+          <option value="">Tu puntuación</option>
           <option>0</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
           <option>5</option>
-        </select> 
+        </select>
         <p></p>
         <button class="btn btn-primary btn-lg" type="submit" id="enviarcomentario">Enviar</button>
       </div>
