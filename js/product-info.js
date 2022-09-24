@@ -6,7 +6,8 @@ document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuari
 let producto;
 let comentarios;
 
-function setCatID(id) {
+//semana4 recarga product-info y carga el prducto con una nueva id de productos recomendados
+function productosrelacionados(id) {
   localStorage.setItem("catIDobj", id);
   window.location = "product-info.html"
 }
@@ -143,28 +144,16 @@ function print_comentarios() {
   document.getElementById("comentarios").innerHTML = data_comentarios;
 }
 
-function productos_relacionados() {
-
-  let productosrelacionados = ""
-
-  productosrelacionados += `PATO PATO PATO PATO 
-    `
-
-
-  document.getElementById("relacionadosproductos").innerHTML = productosrelacionados;
-
-}
-
-
+//productos relacionados semana 4
 function productos_relacionados(producto) {
   console.log("dentro2", producto)
   let productosrelacionados = ""
   for (let i = 0; i < producto.relatedProducts.length; i++) {
     productosrelacionados += `
-    <div onclick="setCatID(${producto.relatedProducts[i].id})" class="cursor-active">
+    <div onclick="productosrelacionados(${producto.relatedProducts[i].id})" class="cursor-active espaciado">
         <div>
             <div align="center">
-                <img src="${producto.relatedProducts[i].image}"class="img-thumbnail" style= width:300px height:300 px>
+                <img src="${producto.relatedProducts[i].image}"class="img-thumbnail" style= width:300px height:300px>
             </div>
             <div>
                 <p class="mb-1, Alinear_Felx">${producto.relatedProducts[i].name}</p>

@@ -3,11 +3,14 @@ const contraseña = document.getElementById("contraseña")
 const button = document.getElementById("button")
 //recopila la informacion del usuario y la guarda para luego poderla usar en index.js
 
-function cerrarseion(){
+
+
+//cierra sesion semana 4
+function cerrarsesion(){
     localStorage.removeItem('usuario');
     localStorage.removeItem('contraseña');
 }
-cerrarseion()
+cerrarsesion()
 
 button.addEventListener("click", (e) => { 
     localStorage.setItem(`usuario`, email.value);
