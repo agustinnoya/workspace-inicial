@@ -9,6 +9,7 @@ const button = document.getElementById("button")
 function cerrarsesion(){
     localStorage.removeItem('usuario');
     localStorage.removeItem('contraseña');
+    localStorage.removeItem('log')
 }
 cerrarsesion()
 
