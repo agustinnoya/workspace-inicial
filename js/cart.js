@@ -30,28 +30,36 @@ function carrito_print() {
 function carrito_subtotal_inicial() {
     console.log("dentro de carrito", carrito)
     let data_subtotal = ""
-    data_subtotal += `<strong><p>USD ${carrito.articles[0].unitCost}</p></strong>`
+    for (let i = 0; i < carrito.articles.length; i++) {
+        data_subtotal += `<strong><p>USD ${carrito.articles[i].unitCost}</p></strong>`
+    }
     document.getElementById("carrito_subtotal").innerHTML = data_subtotal;
     return carrito;
 }
 
 function cantidad_cuadro() {
+
+    let subtotales = ""
+
     for (let i = 0; i < carrito.articles.length; i++) {
-    
-    let subtotal = document.getElementById([i]).value * carrito.articles[i].unitCost
-    console.log(subtotal)
-    carrito_subtotal(subtotal)
+
+        subtotales += document.getElementById([i]).value * carrito.articles[i].unitCost
+        
     }
+  
+    carrito_subtotal(subtotales)
+
 }
 
-function carrito_subtotal(subtotal) {
-    console.log(subtotal)
+function carrito_subtotal(subtotales) {
+    console.log(subtotales)
     let data_subtotal = ""
 
+   for(let i = 0; i < carrito.articles.length; i++){
     data_subtotal += `
-        <strong><p>USD ${subtotal}</p></strong>
+        <strong><p>USD ${subtotales}</p></strong>
             `
-
+   }
 
     document.getElementById("carrito_subtotal").innerHTML = data_subtotal;
 
