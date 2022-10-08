@@ -59,6 +59,7 @@ function informacion_del_producto(producto) {
   return producto;
 }
 
+
 function print_comentarios() {
   let data_comentarios = ""
 
