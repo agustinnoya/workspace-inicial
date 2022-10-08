@@ -167,4 +167,3 @@ function productos_relacionados(producto) {
 
 }
 
-
