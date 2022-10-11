@@ -46,6 +46,9 @@
   margin: 2px
 }
 
+#esquina {
+  margin-right: 219px;
+}
 
 .carrito_superior {
   display: flex;

@@ -66,21 +66,26 @@
         </div>
         <hr>
         <hr>
+        <br>
         <h1>Tipo de envío</h1>
 
         <form>
           <br>
-          <input class="form-check-input position-static" name="Premium" type="radio" value="15" /> Premium 2 a 5 días
+          <input class="form-check-input position-static" name="tipo_de_envio" type="radio" value="15" /> Premium 2 a 5
+          días
           (15%)
           <br />
           <br>
-          <input class="form-check-input position-static" name="express" type="radio" value="7" /> Express 5 a 8 días
+          <input class="form-check-input position-static" name="tipo_de_envio" type="radio" value="7" /> Express 5 a 8
+          días
           (7%)
           <br />
           <br>
-          <input class="form-check-input position-static" name="standard" type="radio" value="5" checked="checked" />
+          <input class="form-check-input position-static" name="tipo_de_envio" type="radio" value="5"
+            checked="checked" />
           Standard 12 a 15 días (5%)
           <br />
+          <br>
         </form>
 
         <p></p>
@@ -91,18 +96,25 @@
 
 
 
-
-
         <form>
-          <div class="form-row">
-            <div class="col-7">
-              <input type="text" class="form-control" placeholder="Calle">
-            </div>
-            <div class="col-7">
-              <input type="text" class="form-control" placeholder="Numero de puerta">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Esquina">
+          <div class="container">
+            <div class="row" >
+              <div class="form-group col-lg-4">
+                <br>
+                <label for="inputEmail4">Calle</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="calle">
+              </div>
+              <div class="form-group col-lg-2">
+                <br>
+                <label for="inputPassword4">Numero</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Numero">
+                <br>
+              </div>
+              
+              <div class="form-group col-lg-4" id="esquina">
+                <label for="inputAddress">Esquina</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Esquina">
+              </div>
             </div>
           </div>
         </form>

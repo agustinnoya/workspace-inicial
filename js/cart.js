@@ -15,6 +15,7 @@ function carrito_JSON() {
 }
 carrito_JSON();
 
+
 function carrito_print() {
     console.log("dentro de carrito", carrito)
     let data_carrito = ""
@@ -42,10 +43,12 @@ function cantidad_cuadro() {
     let subtotales = ""
 
     for (let i = 0; i < carrito.articles.length; i++) {
-
+      if (document.getElementById([i]).value > 0){
         subtotales += document.getElementById([i]).value * carrito.articles[i].unitCost
-        
-    }
+        subtotales = "USD" + subtotales 
+      }else{
+        subtotales +=  "<p>La cantidad tiene</p> <p>que ser superior a 1</p>"
+    }}
   
     carrito_subtotal(subtotales)
 
@@ -57,7 +60,7 @@ function carrito_subtotal(subtotales) {
 
    for(let i = 0; i < carrito.articles.length; i++){
     data_subtotal += `
-        <strong><p>USD ${subtotales}</p></strong>
+        <strong><p>${subtotales}</p></strong>
             `
    }
 
