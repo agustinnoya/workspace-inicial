@@ -40,7 +40,7 @@ function informacion_del_producto(producto) {
   console.log("dentro", producto)
   let data_productos = ""
 
-  data_productos += `
+    data_productos += `
         <div>
           <h2>${producto.name}</h2>
           <hr width="100%" color="black"/>
@@ -53,6 +53,7 @@ function informacion_del_producto(producto) {
           <p> <img src="${producto.images[0]}" height = "196"> <img src="${producto.images[1]}" height = "196"> <img src="${producto.images[2]}" height = "196"> <img src="${producto.images[3]}" height = "196"></p>
         </div>
           `
+  
 
 
   document.getElementById("info_producto").innerHTML = data_productos;
