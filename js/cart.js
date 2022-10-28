@@ -2,6 +2,15 @@ const url_carrito = "https://japceibal.github.io/emercado-api/user_cart/" + loca
 console.log(url_carrito)
 let carrito
 
+function logeado() {
+  if (localStorage.getItem(`log`) == null ) {
+      window.location.href = "login.html"
+  }else{
+      document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
+  }
+};
+logeado();
+
 
 function carrito_JSON() {
   fetch(url_carrito)
@@ -181,14 +190,12 @@ function pago_tranf() {
 }
 
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// funcion sacada de la pagina de bootsrap {
 (function () {
   'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {
@@ -201,7 +208,7 @@ function pago_tranf() {
       }, false)
     })
 })()
-
+// }
 
 function metodo_de_pago() {
 
@@ -257,7 +264,7 @@ function comprobacion_metodo_de_pago() {
   }
 }
 
-function compra_exitosa(){
+function compra_exitosa() {
   const calle = document.getElementById("Calle_credito").value.length
   const cvc = document.getElementById("cvc").value.length
   const vencimiento = document.getElementById("Vencimiento").value.length
@@ -269,17 +276,17 @@ function compra_exitosa(){
   const express = document.getElementById("express").checked
   const stand = document.getElementById("standard").checked
 
-  if (premium || express || stand){
-    if(calle >= 1 && cvc >= 1 && vencimiento >= 1 && credito || numero_de_cuenta >= 1 && transferencia){
-      if(cantidad >= 1){
+  if (premium || express || stand) {
+    if (calle >= 1 && cvc >= 1 && vencimiento >= 1 && credito || numero_de_cuenta >= 1 && transferencia) {
+      if (cantidad >= 1) {
         document.getElementById("boton_compra_exitosa").click()
-      }else{
+      } else {
         document.getElementById("finalizar_compra_boton_real").click()
       }
-    }else{
+    } else {
       document.getElementById("finalizar_compra_boton_real").click()
     }
-  }else{
+  } else {
     document.getElementById("finalizar_compra_boton_real").click()
   }
 }
