@@ -3,10 +3,10 @@ console.log(url_carrito)
 let carrito
 
 function logeado() {
-  if (localStorage.getItem(`log`) == null ) {
-      window.location.href = "login.html"
-  }else{
-      document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
+  if (localStorage.getItem(`log`) == null) {
+    window.location.href = "login.html"
+  } else {
+    document.getElementById("Usuarioindex").innerHTML = localStorage.getItem(`usuario`)
   }
 };
 logeado();

@@ -35,27 +35,74 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="sell.html">Vender</a></li>
+          <li class="nav-item"><a id="Usuarioindex" class="nav-link" href="my-profile.html"></a>
+            <ul class="desplegable">
+              <li><a href="cart.html">Mi carrito</a></li>
+              <li><a href="my-profile.html">Mi perfil</a></li>
+              <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+
+
+
+
+
+
+
+
+
+    <div>
+      <div class="container">
+        <div class="row">
+          <h1><br>Perfil<br><br></h1>
+          <hr>
+          <form>
+            <div class="form-group col-md-6" id="formulario">
+              <label for="inputNombre1">Primer Nombre*</label>
+              <input type="text" class="form-control" value="" id="inputNombre1" required>
+
+              <label for="inputNombre2">Segundo Nombre</label>
+              <input type="text" class="form-control" value="" id="inputNombre2">
+
+              <label for="inputApellido1">Primer apellido*</label>
+              <input type="text" class="form-control" value="" id="inputApellido1" required>
+
+              <label for="inputApellido2">Segundo Apellido</label>
+              <input type="text" class="form-control" value="" id="inputApellido2">
+              
+              <div id="email_formulario">
+                <label for="inputemail">E-mail</label>
+                <input type="email" class="form-control" value="" id="inputemail">
+              </div>
+
+              <label for="inputtelefono">Teléfono de contacto*</label required>
+              <input type="number" class="form-control" value="" id="inputtelefono">
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <br>
+
+            <button type="button" class="btn btn-primary" onclick="comprobar_campos()">Guardar cambios</button>
+            <button type="submit" id="boton_error" style="display: none;" class="btn btn-primary"></button>
+          </form>
+        </div>
       </div>
     </div>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">

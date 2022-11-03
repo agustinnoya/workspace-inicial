@@ -10,6 +10,7 @@ function cerrarsesion(){
     localStorage.removeItem('usuario');
     localStorage.removeItem('contraseña');
     localStorage.removeItem('log')
+
 }
 cerrarsesion()
 
@@ -17,8 +18,11 @@ button.addEventListener("click", (e) => {
     localStorage.setItem(`usuario`, email.value);
     localStorage.setItem(`contraseña`, contraseña.value);
     localStorage.setItem(`log`, true);
-})
 
+//asignar variable key para guardar su info de usuario 
+//localStorage.setItem("email.value" fsfdsadfsafd)
+
+})
 
 
 
