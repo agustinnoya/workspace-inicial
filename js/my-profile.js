@@ -67,53 +67,21 @@ function guardar_cambios_perfil() {
     //let segundoApellido2 = segundoApellido.value
     //let usuario1 = email.value
     //let telefono1 = telefono.value
+
+
     const email_activo = localStorage.getItem(`usuario`)
 
-    if (email_activo == "agustinn57@outlook.com") {
-        let user = {
-            "nombre1": primerNombre.value,
-            "nombre2": segundoNombre.value,
-            "apellido1": primerApellido.value,
-            "apellido2": segundoApellido.value,
-            "email": email_activo,
-            "telefono": telefono.value
-        }
 
-
-
-
-        console.log(user);
-
-
-        let userJson = JSON.stringify(user);
-
-        localStorage.setItem("perfil_usuario_agus", userJson)
-
-    } else if (email_activo == "jap@gmail.com") {
-        let user = {
-            "nombre1": primerNombre.value,
-            "nombre2": segundoNombre.value,
-            "apellido1": primerApellido.value,
-            "apellido2": segundoApellido.value,
-            "email": email_activo,
-            "telefono": telefono.value
-        }
-
-
-
-
-        console.log(user);
-
-
-        let userJson = JSON.stringify(user);
-
-        localStorage.setItem("perfil_usuario_jap", userJson)
-
+    let usuario = {
+        "nombre1": primerNombre.value,
+        "nombre2": segundoNombre.value,
+        "apellido1": primerApellido.value,
+        "apellido2": segundoApellido.value,
+        "email": email_activo,
+        "telefono": telefono.value,
     }
-
-
-
-
+    let usuarioJson = JSON.stringify(usuario);
+    localStorage.setItem(email.value, usuarioJson)
 
 
 
@@ -132,46 +100,54 @@ function guardar_cambios_perfil() {
     logeado();
 }
 
+/*function formulario_null2(){
+   usuario_perfil = localStorage.getItem(email.value, email.value)
+   usuario_log = localStorage.getItem("usuario")
+   
+   for (let i = 0; i < localStorage.length; i++) {
+    
+  }
 
-
+}*/
+/*
 function formulario_null() {
     agus = localStorage.getItem("perfil_usuario_agus")
     jap = localStorage.getItem("perfil_usuario_jap")
-    
+
     const email_activo = localStorage.getItem(`usuario`)
-if(agus == null){
-    if (email_activo == "agustinn57@outlook.com") {
-        let user = {
-            "nombre1": "",
-            "nombre2": "",
-            "apellido1": "",
-            "apellido2": "",
-            "email": email_activo,
-            "telefono": "",
+    if (agus == null) {
+        if (email_activo == "agustinn57@outlook.com") {
+            let user = {
+                "nombre1": "",
+                "nombre2": "",
+                "apellido1": "",
+                "apellido2": "",
+                "email": email_activo,
+                "telefono": "",
+            }
+            let usuarioJson = JSON.stringify(usuario);
+            localStorage.setItem("perfil_usuario_agus", usuarioJson)
         }
-        let usuarioJson = JSON.stringify(usuario);
-        localStorage.setItem("perfil_usuario_agus", usuarioJson)
-    }
-}else if (jap == null){
-    if (email_activo == "jap@gmail.com") {
-        let user = {
-            "nombre1": "",
-            "nombre2": "",
-            "apellido1": "",
-            "apellido2": "",
-            "email": email_activo,
-            "telefono": "",
+    } else if (jap == null) {
+        if (email_activo == "jap@gmail.com") {
+            let user = {
+                "nombre1": "",
+                "nombre2": "",
+                "apellido1": "",
+                "apellido2": "",
+                "email": email_activo,
+                "telefono": "",
+            }
+            let usuarioJson = JSON.stringify(usuario);
+            localStorage.setItem("perfil_usuario_jap", usuarioJson)
         }
-        let usuarioJson = JSON.stringify(usuario);
-        localStorage.setItem("perfil_usuario_jap", usuarioJson)
     }
+
+
+
+
 }
-
-
-     
-
-}
-formulario_null()
+*/
 
 
 
@@ -179,38 +155,11 @@ formulario_null()
 function nombre1_formulario() {
     const email_activo = localStorage.getItem(`usuario`)
 
-    if (email_activo == "agustinn57@outlook.com") {
+    
 
-        let usuario = localStorage.getItem('perfil_usuario_agus')
+        let usuario = localStorage.getItem(email_activo)
         const usuarioarr = JSON.parse(usuario)
-        const email_activo = localStorage.getItem(`usuario`)
-
-        formulario = `
-    <label for="inputNombre1">Primer Nombre*</label>
-    <input type="text" class="form-control" value="${usuarioarr.nombre1}" id="inputNombre1" required>
-   
-    <label for="inputNombre2">Segundo Nombre</label>
-    <input type="text" class="form-control" value="${usuarioarr.nombre2}" id="inputNombre2">
-             
-    <label for="inputApellido1">Primer apellido*</label>
-    <input type="text" class="form-control" value="${usuarioarr.apellido1}" id="inputApellido1" required>
-       
-    <label for="inputApellido2">Segundo Apellido</label>
-    <input type="text" class="form-control" value="${usuarioarr.apellido2}" id="inputApellido2">
-
-    <label for="inputemail">E-mail</label>
-    <input type="email" class="form-control" value="${email_activo}" id="inputemail">
-
-    <label for="inputtelefono">Teléfono de contacto*</label required>
-    <input type="number" class="form-control" value="${usuarioarr.telefono}" id="inputtelefono">
-    `
-        document.getElementById("formulario").innerHTML = formulario
-
-    } else if (email_activo == "jap@gmail.com") {
-
-        let usuario = localStorage.getItem('perfil_usuario_jap')
-        const usuarioarr = JSON.parse(usuario)
-
+        
 
         formulario = `
     <label for="inputNombre1">Primer Nombre*</label>
@@ -232,11 +181,6 @@ function nombre1_formulario() {
     <input type="number" class="form-control" value="${usuarioarr.telefono}" id="inputtelefono">
     `
         document.getElementById("formulario").innerHTML = formulario
-    }
-
-
-
-
 
 
 }

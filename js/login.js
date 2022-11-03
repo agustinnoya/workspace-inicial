@@ -6,7 +6,7 @@ const button = document.getElementById("button")
 
 
 //cierra sesion semana 4
-function cerrarsesion(){
+function cerrarsesion() {
     localStorage.removeItem('usuario');
     localStorage.removeItem('contraseña');
     localStorage.removeItem('log')
@@ -14,13 +14,27 @@ function cerrarsesion(){
 }
 cerrarsesion()
 
-button.addEventListener("click", (e) => { 
+button.addEventListener("click", (e) => {
     localStorage.setItem(`usuario`, email.value);
     localStorage.setItem(`contraseña`, contraseña.value);
     localStorage.setItem(`log`, true);
 
-//asignar variable key para guardar su info de usuario 
-//localStorage.setItem("email.value" fsfdsadfsafd)
+
+
+
+    if (localStorage.getItem(email.value) == null) {
+
+        let usuario = {
+            "nombre1": "",
+            "nombre2": "",
+            "apellido1": "",
+            "apellido2": "",
+            "email": email.value,
+            "telefono": "",
+        }
+        let usuarioJson = JSON.stringify(usuario);
+        localStorage.setItem(email.value, usuarioJson)
+    }
 
 })
 
@@ -55,7 +69,7 @@ button.addEventListener("click", (e) => {
 
 
 
-//button.addEventListener("click", (e) => { 
+//button.addEventListener("click", (e) => {
 //    let usuario = {
 //        email: email.value,
 //        pass: contraseña.value,
