@@ -22,7 +22,7 @@ button.addEventListener("click", (e) => {
 
 
 
-//comprueba si ya existe un perfil para el usuario, si no crea uno nuevo 
+    //comprueba si ya existe un perfil para el usuario, si no crea uno nuevo 
     if (localStorage.getItem(email.value) == null) {
 
         let usuario = {
