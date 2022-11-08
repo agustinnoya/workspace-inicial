@@ -1,7 +1,7 @@
 const email = document.getElementById("email")
 const contraseña = document.getElementById("contraseña")
 const button = document.getElementById("button")
-//recopila la informacion del usuario y la guarda para luego poderla usar en index.js
+
 
 
 
@@ -14,6 +14,7 @@ function cerrarsesion() {
 }
 cerrarsesion()
 
+
 button.addEventListener("click", (e) => {
     localStorage.setItem(`usuario`, email.value);
     localStorage.setItem(`contraseña`, contraseña.value);
@@ -21,7 +22,7 @@ button.addEventListener("click", (e) => {
 
 
 
-
+//comprueba si ya existe un perfil para el usuario, si no crea uno nuevo 
     if (localStorage.getItem(email.value) == null) {
 
         let usuario = {
